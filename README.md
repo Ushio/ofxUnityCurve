@@ -7,3 +7,7 @@
 ![demo](demo.gif)
 ![demo](simplecurve.png)
 
+Unity Settings
+
+![demo](Unity1.png)
+![demo](Unity2.png)

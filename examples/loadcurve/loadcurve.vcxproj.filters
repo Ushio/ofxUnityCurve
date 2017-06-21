@@ -21,23 +21,23 @@
 		<Filter Include="addons">
 			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
 		</Filter>
-		<Filter Include="addons\ofxUnityCurves">
-			<UniqueIdentifier>{E9796D9A-9BD1-5D8D-F5BA-087D}</UniqueIdentifier>
+		<Filter Include="addons\ofxUnityCurve">
+			<UniqueIdentifier>{BCC8E108-5F70-639B-C406-4F5D}</UniqueIdentifier>
 		</Filter>
-		<Filter Include="addons\ofxUnityCurves\src">
-			<UniqueIdentifier>{08B02C0D-B3F6-C23F-C9DE-FC0A}</UniqueIdentifier>
+		<Filter Include="addons\ofxUnityCurve\src">
+			<UniqueIdentifier>{32521CEC-3235-003C-B5F9-8F18}</UniqueIdentifier>
 		</Filter>
-		<Filter Include="addons\ofxUnityCurves\src\rapidjson">
-			<UniqueIdentifier>{75E7A342-1790-7780-8566-7686}</UniqueIdentifier>
+		<Filter Include="addons\ofxUnityCurve\src\rapidjson">
+			<UniqueIdentifier>{62938F3D-807C-99E0-BBE1-AAC0}</UniqueIdentifier>
 		</Filter>
-		<Filter Include="addons\ofxUnityCurves\src\rapidjson\error">
-			<UniqueIdentifier>{200D84E4-F65D-7ABA-F681-30D9}</UniqueIdentifier>
+		<Filter Include="addons\ofxUnityCurve\src\rapidjson\error">
+			<UniqueIdentifier>{57262492-1A16-BEA0-1A9D-C6F7}</UniqueIdentifier>
 		</Filter>
-		<Filter Include="addons\ofxUnityCurves\src\rapidjson\internal">
-			<UniqueIdentifier>{398793A2-F5B0-B90A-8333-140A}</UniqueIdentifier>
+		<Filter Include="addons\ofxUnityCurve\src\rapidjson\internal">
+			<UniqueIdentifier>{3F167777-571D-D78B-2BF0-EF62}</UniqueIdentifier>
 		</Filter>
-		<Filter Include="addons\ofxUnityCurves\src\rapidjson\msinttypes">
-			<UniqueIdentifier>{9E52C1DE-025F-A442-06AA-0D99}</UniqueIdentifier>
+		<Filter Include="addons\ofxUnityCurve\src\rapidjson\msinttypes">
+			<UniqueIdentifier>{8FCBEF3C-AC71-FC2A-B95C-DE6D}</UniqueIdentifier>
 		</Filter>
 	</ItemGroup>
 	<ItemGroup>
@@ -47,113 +47,113 @@
 		<ClInclude Include="src\ofApp.h">
 			<Filter>src</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\allocators.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\ofxUnityCurve.hpp">
+			<Filter>addons\ofxUnityCurve\src</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\document.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\allocators.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\encodedstream.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\document.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\encodings.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\encodedstream.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\error\en.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\error</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\encodings.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\error\error.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\error</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\error\en.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\error</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\filereadstream.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\error\error.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\error</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\filewritestream.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\filereadstream.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\fwd.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\filewritestream.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\biginteger.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\fwd.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\diyfp.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\biginteger.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\dtoa.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\diyfp.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\ieee754.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\dtoa.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\itoa.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\ieee754.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\meta.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\itoa.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\pow10.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\meta.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\regex.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\pow10.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\stack.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\regex.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\strfunc.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\stack.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\strtod.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\strfunc.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\swap.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\internal</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\strtod.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\istreamwrapper.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\swap.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\internal</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\memorybuffer.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\istreamwrapper.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\memorystream.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\memorybuffer.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\msinttypes\inttypes.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\msinttypes</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\memorystream.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\msinttypes\stdint.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson\msinttypes</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\msinttypes\inttypes.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\msinttypes</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\ostreamwrapper.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\msinttypes\stdint.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson\msinttypes</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\pointer.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\ostreamwrapper.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\prettywriter.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\pointer.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\rapidjson.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\prettywriter.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\reader.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\rapidjson.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\schema.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\reader.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\stream.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\schema.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\stringbuffer.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\stream.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\writer.h">
-			<Filter>addons\ofxUnityCurves\src\rapidjson</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\stringbuffer.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\unitycurve.hpp">
-			<Filter>addons\ofxUnityCurves\src</Filter>
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\writer.h">
+			<Filter>addons\ofxUnityCurve\src\rapidjson</Filter>
 		</ClInclude>
 	</ItemGroup>
 	<ItemGroup>

@@ -5,4 +5,5 @@
 3. load curve by ofxUnityCurve
 
 ![demo](demo.gif)
+![demo](simplecurve.png)
 

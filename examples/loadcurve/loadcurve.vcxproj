@@ -95,7 +95,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxUnityCurves\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxUnityCurve\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -114,7 +114,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxUnityCurves\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxUnityCurve\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -133,7 +133,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxUnityCurves\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxUnityCurve\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 		</ClCompile>
@@ -155,7 +155,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxUnityCurves\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\..\addons\ofxUnityCurve\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 		</ClCompile>
 		<Link>
@@ -176,42 +176,42 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\allocators.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\document.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\encodedstream.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\encodings.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\error\en.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\error\error.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\filereadstream.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\filewritestream.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\fwd.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\biginteger.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\diyfp.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\dtoa.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\ieee754.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\itoa.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\meta.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\pow10.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\regex.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\stack.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\strfunc.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\strtod.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\internal\swap.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\istreamwrapper.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\memorybuffer.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\memorystream.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\msinttypes\inttypes.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\msinttypes\stdint.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\ostreamwrapper.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\pointer.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\prettywriter.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\rapidjson.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\reader.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\schema.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\stream.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\stringbuffer.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\rapidjson\writer.h" />
-		<ClInclude Include="..\..\..\..\addons\ofxUnityCurves\src\unitycurve.hpp" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\ofxUnityCurve.hpp" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\allocators.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\document.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\encodedstream.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\encodings.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\error\en.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\error\error.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\filereadstream.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\filewritestream.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\fwd.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\biginteger.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\diyfp.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\dtoa.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\ieee754.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\itoa.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\meta.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\pow10.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\regex.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\stack.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\strfunc.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\strtod.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\internal\swap.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\istreamwrapper.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\memorybuffer.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\memorystream.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\msinttypes\inttypes.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\msinttypes\stdint.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\ostreamwrapper.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\pointer.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\prettywriter.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\rapidjson.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\reader.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\schema.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\stream.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\stringbuffer.h" />
+		<ClInclude Include="..\..\..\..\addons\ofxUnityCurve\src\rapidjson\writer.h" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

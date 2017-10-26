@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using MiniJSON;
 using System.IO;
+using System;
 
 public class AnimationExporter : MonoBehaviour {
     public List<string> PathsForRelativeAssets = new List<string>();
@@ -26,7 +27,17 @@ public class AnimationExporter : MonoBehaviour {
             return;
         }
         var clip = animation.clip;
+        if(clip == null)
+        {
+            foreach (AnimationState anim in animation)
+            {
+                clip = anim.clip;
+            }
+        }
+
         var bindings = AnimationUtility.GetCurveBindings(clip);
+
+
         Dictionary<string, object>[] dstCurves = new Dictionary<string, object>[bindings.Length];
 
         for (int i = 0; i < bindings.Length; ++i)
@@ -56,11 +67,14 @@ public class AnimationExporter : MonoBehaviour {
         var assetsPath = Path.Combine(Application.streamingAssetsPath, "..");
         var bytes = System.Text.Encoding.UTF8.GetBytes(json);
 
-        foreach (var PathForRelativeAssets in PathsForRelativeAssets)
+        if(PathsForRelativeAssets != null)
         {
-            var dst = Path.Combine(assetsPath, PathForRelativeAssets);
-            Debug.Log(string.Format("save to: {0}", Path.GetFullPath(dst)));
-            File.WriteAllBytes(dst, bytes);
+            foreach (var PathForRelativeAssets in PathsForRelativeAssets)
+            {
+                var dst = Path.Combine(assetsPath, PathForRelativeAssets);
+                Debug.Log(string.Format("save to: {0}", Path.GetFullPath(dst)));
+                File.WriteAllBytes(dst, bytes);
+            }
         }
     }
 }
@@ -73,6 +87,24 @@ public class AnimationExporterEditor : Editor
         DrawDefaultInspector();
 
         AnimationExporter obj = (AnimationExporter)target;
+        if (GUILayout.Button("Add Save File"))
+        {
+            string file = EditorUtility.SaveFilePanel("Curve File", "", "curve.json", "json");
+
+            if (file != null && file.Length > 1)
+            {
+                var fileURI = new System.Uri(file);
+                var refURI = new Uri(Application.streamingAssetsPath);
+                var relative = refURI.MakeRelativeUri(fileURI).ToString();
+
+                if(obj.PathsForRelativeAssets == null)
+                {
+                    obj.PathsForRelativeAssets = new List<string>();
+                }
+
+                obj.PathsForRelativeAssets.Add(relative);
+            }
+        }
         if (GUILayout.Button("Save !"))
         {
             obj.Write();

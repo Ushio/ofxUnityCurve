@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include <map>
 #include <vector>
+#include <algorithm>
 #include "rapidjson/rapidjson.h"
 #include "rapidjson/document.h"
 
@@ -76,6 +77,17 @@ public:
 	}
 	void reload() {
 		load(_curveName.c_str());
+	}
+
+	float maxDuration() const {
+		float d = 0.0f;
+		for (auto it = _curves.begin(); it != _curves.end(); ++it)
+		{
+			if (!it->second.empty()) {
+				d = std::max(d, it->second[it->second.size() - 1].time);
+			}
+		}
+		return d;
 	}
 private:
 	float _Evaluate(Keyframe keyframe0, Keyframe keyframe1, float t) const {

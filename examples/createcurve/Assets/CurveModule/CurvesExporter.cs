@@ -4,6 +4,7 @@ using UnityEngine;
 using MiniJSON;
 using System.IO;
 using UnityEditor;
+using System;
 
 public class CurvesExporter : MonoBehaviour {
     public List<string> PathsForRelativeAssets = new List<string>();
@@ -76,6 +77,24 @@ public class CurvesExporterEditor : Editor
         DrawDefaultInspector();
 
         CurvesExporter obj = (CurvesExporter)target;
+        if (GUILayout.Button("Add Save File"))
+        {
+            string file = EditorUtility.SaveFilePanel("Curve File", "", "curve.json", "json");
+
+            if (file != null && file.Length > 1)
+            {
+                var fileURI = new System.Uri(file);
+                var refURI = new Uri(Application.streamingAssetsPath);
+                var relative = refURI.MakeRelativeUri(fileURI).ToString();
+
+                if (obj.PathsForRelativeAssets == null)
+                {
+                    obj.PathsForRelativeAssets = new List<string>();
+                }
+
+                obj.PathsForRelativeAssets.Add(relative);
+            }
+        }
         if (GUILayout.Button("Save !"))
         {
             obj.Write();

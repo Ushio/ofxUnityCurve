@@ -46,6 +46,7 @@ void ofApp::draw(){
 	ofPolyline line;
 	for (int i = 0; i < 100; ++i) {
 		float x = ofMap(i, 0, 100, -0.5, 1.5);
+		// float y = _simpleCurve.evaluate("curve_a", x, ofxUnityCurve::RepeatMode_Continueous, ofxUnityCurve::RepeatMode_Continueous);
 		float y = _simpleCurve.evaluate("curve_a", x);
 		line.addVertex(x, y);
 	}

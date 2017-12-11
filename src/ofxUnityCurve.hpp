@@ -9,6 +9,11 @@
 
 class ofxUnityCurve {
 public:
+	enum RepeatMode {
+		RepeatMode_Clamp,
+		RepeatMode_Continueous
+	};
+
 	struct Keyframe {
 		float value = 0.0f;
 		float time = 0.0f;
@@ -53,14 +58,14 @@ public:
 		_curves = newCurves;
 	}
 
-	float evaluate(const char *key, float time) const {
+	float evaluate(const char *key, float time, RepeatMode headMode = RepeatMode_Clamp, RepeatMode tailMode = RepeatMode_Clamp) const {
 		auto it = _curves.find(key);
 		if (it == _curves.end()) {
 			printf("UnityCurve warning: \"%s\" not found.\n", key);
 			return 0.0f;
 		}
 
-		return _Evaluate(it->second, time);
+		return _Evaluate(it->second, time, headMode, headMode);
 	}
 
 	std::vector<std::string> keys() const {
@@ -111,14 +116,14 @@ private:
 		float t2 = t * t;
 		float t3 = t2 * t;
 
-		float a = 2 * t3 - 3 * t2 + 1;
-		float b = t3 - 2 * t2 + t;
+		float a = 2.0f * t3 - 3.0f * t2 + 1.0f;
+		float b = t3 - 2.0f * t2 + t;
 		float c = t3 - t2;
-		float d = -2 * t3 + 3 * t2;
+		float d = -2.0f * t3 + 3.0f * t2;
 
 		return a * keyframe0.value + b * m0 + c * m1 + d * keyframe1.value;
 	}
-	float _Evaluate(const std::vector<Keyframe> &keys, float time) const {
+	float _Evaluate(const std::vector<Keyframe> &keys, float time, RepeatMode headMode, RepeatMode tailMode) const {
 		if (keys.size() == 0)
 		{
 			return 0.0f;
@@ -133,11 +138,19 @@ private:
 
 		if (time <= keys[lower].time)
 		{
-			return keys[lower].value;
+			if (headMode == RepeatMode_Clamp) {
+				return keys[lower].value;
+			}
+			float x = time - keys[lower].time;
+			return keys[lower].value + keys[lower].outTangent * x;
 		}
 		if (keys[upper].time <= time)
 		{
-			return keys[upper].value;
+			if (headMode == RepeatMode_Clamp) {
+				return keys[upper].value;
+			}
+			float x =  time - keys[upper].time;
+			return keys[upper].value + keys[upper].inTangent * x;
 		}
 
 		while (lower + 1 != upper)

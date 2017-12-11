@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using MiniJSON;
 using System.IO;
-using UnityEditor;
 using System;
+using UnityEditor;
+using UnityEditorInternal;
 
 public class CurvesExporter : MonoBehaviour {
     public List<string> PathsForRelativeAssets = new List<string>();
@@ -86,6 +87,8 @@ public class CurvesExporterEditor : Editor
                 var fileURI = new System.Uri(file);
                 var refURI = new Uri(Application.streamingAssetsPath);
                 var relative = refURI.MakeRelativeUri(fileURI).ToString();
+
+				Undo.RecordObject(obj, "PathsForRelativeAssets");
 
                 if (obj.PathsForRelativeAssets == null)
                 {

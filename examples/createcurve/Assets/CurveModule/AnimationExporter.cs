@@ -97,6 +97,8 @@ public class AnimationExporterEditor : Editor
                 var refURI = new Uri(Application.streamingAssetsPath);
                 var relative = refURI.MakeRelativeUri(fileURI).ToString();
 
+				Undo.RecordObject(obj, "PathsForRelativeAssets");
+
                 if(obj.PathsForRelativeAssets == null)
                 {
                     obj.PathsForRelativeAssets = new List<string>();

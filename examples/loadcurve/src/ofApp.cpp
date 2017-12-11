@@ -35,7 +35,7 @@ void ofApp::draw(){
 
 	float e = ofGetElapsedTimef();
 
-	float time01 = fmodf(e, 1.0f);
+	float time01 = fmodf(e, _sphereAnimationCurve.maxDuration());
 	ofVec3f sphere(
 		_sphereAnimationCurve.evaluate("/m_LocalPosition.x", time01),
 		_sphereAnimationCurve.evaluate("/m_LocalPosition.y", time01),
@@ -45,7 +45,7 @@ void ofApp::draw(){
 
 	ofPolyline line;
 	for (int i = 0; i < 100; ++i) {
-		float x = (float)i / 100.0f;
+		float x = ofMap(i, 0, 100, -0.5, 1.5);
 		float y = _simpleCurve.evaluate("curve_a", x);
 		line.addVertex(x, y);
 	}

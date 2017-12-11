@@ -17,22 +17,35 @@ public class AnimationExporter : MonoBehaviour {
 		
 	}
 
+    public AnimationClip ExportedAnimationClip
+    {
+        get
+        {
+            var animation = GetComponent<Animation>();
+            if(animation == null)
+            {
+                return null;
+            }
+            var clip = animation.clip;
+            if (clip == null)
+            {
+                foreach (AnimationState anim in animation)
+                {
+                    clip = anim.clip;
+                }
+            }
+            return clip;
+        }
+    }
+
     [ContextMenu("Write Animation Curves")]
     public void Write()
     {
-        var animation = GetComponent<Animation>();
-        if(animation == null)
+        var clip = this.ExportedAnimationClip;
+        if (clip == null)
         {
-            Debug.LogWarning("Animation Compornent is not found.");
+            Debug.LogWarning("Animation Clip not found.");
             return;
-        }
-        var clip = animation.clip;
-        if(clip == null)
-        {
-            foreach (AnimationState anim in animation)
-            {
-                clip = anim.clip;
-            }
         }
 
         var bindings = AnimationUtility.GetCurveBindings(clip);
@@ -84,9 +97,40 @@ public class AnimationExporterEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        DrawDefaultInspector();
-
         AnimationExporter obj = (AnimationExporter)target;
+        Undo.RecordObject(obj, "AnimationExporter");
+
+        if (obj.GetComponent<Animation>() != null)
+        {
+            if (GUILayout.Button("Edit Animation"))
+            {
+                EditorApplication.ExecuteMenuItem("Window/Animation");
+            }
+        }
+        else
+        {
+            if (GUILayout.Button("Create Animation"))
+            {
+                Undo.AddComponent<Animation>(obj.gameObject);
+            }
+        }
+
+        // 保存するキーを表示する
+        GUILayout.BeginVertical(GUI.skin.box);
+        GUILayout.Label("Export Keys");
+        var clip = obj.ExportedAnimationClip;
+        var bindings = AnimationUtility.GetCurveBindings(clip);
+
+        for (int i = 0; i < bindings.Length; ++i)
+        {
+            AnimationCurve curve = AnimationUtility.GetEditorCurve(clip, bindings[i]);
+            string key = bindings[i].path + "/" + bindings[i].propertyName;
+            EditorGUILayout.TextField(key);
+        }
+        GUILayout.EndVertical();
+
+        DrawDefaultInspector();
+        
         if (GUILayout.Button("Add Save File"))
         {
             string file = EditorUtility.SaveFilePanel("Curve File", "", "curve.json", "json");
@@ -96,8 +140,6 @@ public class AnimationExporterEditor : Editor
                 var fileURI = new System.Uri(file);
                 var refURI = new Uri(Application.streamingAssetsPath);
                 var relative = refURI.MakeRelativeUri(fileURI).ToString();
-
-				Undo.RecordObject(obj, "PathsForRelativeAssets");
 
                 if(obj.PathsForRelativeAssets == null)
                 {

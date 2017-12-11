@@ -5,7 +5,6 @@ using MiniJSON;
 using System.IO;
 using System;
 using UnityEditor;
-using UnityEditorInternal;
 
 public class CurvesExporter : MonoBehaviour {
     public List<string> PathsForRelativeAssets = new List<string>();
@@ -58,8 +57,6 @@ public class CurvesExporter : MonoBehaviour {
         }
 
         var json = Json.Serialize(dstCurves);
-        // Debug.Log(json);
-        // Debug.Log(Application.streamingAssetsPath);
         var assetsPath = Path.Combine(Application.streamingAssetsPath, "..");
         var bytes = System.Text.Encoding.UTF8.GetBytes(json);
         foreach (var PathForRelativeAssets in PathsForRelativeAssets)
@@ -75,9 +72,72 @@ public class CurvesExporterEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        DrawDefaultInspector();
+        // DrawDefaultInspector();
 
         CurvesExporter obj = (CurvesExporter)target;
+        Undo.RecordObject(obj, "CurvesExporter");
+
+        SerializedProperty propPathsForRelativeAssets = serializedObject.FindProperty("PathsForRelativeAssets");
+        serializedObject.Update();
+        EditorGUI.BeginChangeCheck();
+        GUILayout.BeginVertical(GUI.skin.box);
+        GUILayout.Label("Curves");
+        for(int i = 0; i < obj.Curves.Count; ++i)
+        {
+            EditorGUILayout.BeginVertical(GUI.skin.box);
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.PrefixLabel(string.Format("curve [{0}]", i));
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("x"))
+            {
+                obj.Curves.RemoveAt(i);
+                break;
+            }
+            EditorGUILayout.EndHorizontal();
+
+            obj.Curves[i].name = EditorGUILayout.TextField("key", obj.Curves[i].name);
+            EditorGUILayout.CurveField(obj.Curves[i].curve);
+            EditorGUILayout.EndVertical();
+
+            // 操作
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            GUI.enabled = i != 0;
+            if (GUILayout.Button("up"))
+            {
+                var tmp = obj.Curves[i];
+                obj.Curves[i] = obj.Curves[i - 1];
+                obj.Curves[i - 1] = tmp;
+
+                serializedObject.Update();
+            }
+            GUI.enabled = true;
+            GUI.enabled = i != obj.Curves.Count - 1;
+            if (GUILayout.Button("down"))
+            {
+                var tmp = obj.Curves[i];
+                obj.Curves[i] = obj.Curves[i + 1];
+                obj.Curves[i + 1] = tmp;
+
+                serializedObject.Update();
+            }
+            GUI.enabled = true;
+            EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.Space();
+        }
+        GUILayout.EndVertical();
+        if (GUILayout.Button("Add New Curve"))
+        {
+            var curve = new CurvesExporter.CurveItem();
+            curve.name = "curve";
+            curve.curve = AnimationCurve.Linear(0, 0, 1, 1);
+            obj.Curves.Add(curve);
+        }
+        EditorGUILayout.Space();
+
+        EditorGUILayout.PropertyField(propPathsForRelativeAssets, true);
+
         if (GUILayout.Button("Add Save File"))
         {
             string file = EditorUtility.SaveFilePanel("Curve File", "", "curve.json", "json");
@@ -87,8 +147,6 @@ public class CurvesExporterEditor : Editor
                 var fileURI = new System.Uri(file);
                 var refURI = new Uri(Application.streamingAssetsPath);
                 var relative = refURI.MakeRelativeUri(fileURI).ToString();
-
-				Undo.RecordObject(obj, "PathsForRelativeAssets");
 
                 if (obj.PathsForRelativeAssets == null)
                 {
@@ -101,6 +159,11 @@ public class CurvesExporterEditor : Editor
         if (GUILayout.Button("Save !"))
         {
             obj.Write();
+        }
+
+        if (EditorGUI.EndChangeCheck())
+        {
+            serializedObject.ApplyModifiedProperties();
         }
     }
 }

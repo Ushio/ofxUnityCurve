@@ -36,6 +36,10 @@ public:
 			const auto &keys = curve["keys"];
 
 			std::vector<Keyframe> keyframes(keys.Size());
+			if (keyframes.empty()) {
+				continue;
+			}
+
 			for (int j = 0; j < keys.Size(); ++j) {
 				const auto &key = keys[j];
 				keyframes[j].value = key["value"].GetFloat();
@@ -79,6 +83,14 @@ public:
 		load(_curveName.c_str());
 	}
 
+	float duration(const char *key) const {
+		auto it = _curves.find(key);
+		if (it == _curves.end()) {
+			printf("UnityCurve warning: \"%s\" not found.\n", key);
+			return 0.0f;
+		}
+		return it->second[it->second.size() - 1].time;
+	}
 	float maxDuration() const {
 		float d = 0.0f;
 		for (auto it = _curves.begin(); it != _curves.end(); ++it)
